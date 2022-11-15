@@ -14,7 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - id: deploy
-      uses: bitovi/github-actions-node-app-to-aws-vm@main
+      # TODO: uncomment before merge
+      # uses: bitovi/github-actions-node-app-to-aws-vm@main
+      # TODO: remove before merge
+      uses: bitovi/github-actions-node-app-to-aws-vm@url-env-var
       with:
         aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID_JIRA_INTEGRATIONS}}
         aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY_JIRA_INTEGRATIONS}}
