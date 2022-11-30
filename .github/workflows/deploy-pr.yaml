@@ -1,9 +1,8 @@
-name: Deploy
+name: Deploy PR
 
 on:
   pull_request:
-    # branches: [ main ]
-    branches: [ testing-domains-in-action ]
+    branches: [ main ]
 
 
 jobs:
