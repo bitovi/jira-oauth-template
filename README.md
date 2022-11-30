@@ -1,5 +1,3 @@
-testing-foo
-
 ## Jira OAuth Integration
 
 This is a simple Jira oAuth template or starter-pack. It helps bootstrap your Jira application with OAuth2.0 already setup.
