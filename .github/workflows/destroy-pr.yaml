@@ -27,3 +27,4 @@ jobs:
         dot_env: ${{ secrets.DOT_ENV }}
         aws_resource_identifier: ${{ github.event.inputs.aws_resource_identifier }}
         app_port: 3000
+        domain_name: bitovi-jira.com

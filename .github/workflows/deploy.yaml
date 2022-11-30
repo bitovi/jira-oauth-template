@@ -17,5 +17,6 @@ jobs:
         aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY_JIRA_INTEGRATIONS}}
         dot_env: ${{ secrets.DOT_ENV }}
         aws_default_region: us-east-1
+        domain_name: bitovi-jira.com
 
         app_port: 3000
