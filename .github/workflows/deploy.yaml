@@ -2,8 +2,7 @@ name: Deploy
 
 on:
   push:
-    # branches: [ main ]
-    branches: [ testing-domains-in-action ]
+    branches: [ main ]
 
 jobs:
   deploy:
