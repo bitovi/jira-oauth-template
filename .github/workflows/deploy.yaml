@@ -2,7 +2,8 @@ name: Deploy
 
 on:
   push:
-    branches: [ main ]
+    # branches: [ main ]
+    branches: [ lb-dns-test ]
 
 jobs:
   deploy:
@@ -11,7 +12,7 @@ jobs:
     - id: deploy
       # TODO: use published version after merge of action
       # uses: bitovi/github-actions-deploy-docker-to-ec2@v0.2.0
-      uses: bitovi/github-actions-deploy-docker-to-ec2@add-public-dns-config
+      uses: bitovi/github-actions-deploy-docker-to-ec2@lb-dns-output
       with:
         aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID_JIRA_INTEGRATIONS}}
         aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY_JIRA_INTEGRATIONS}}
