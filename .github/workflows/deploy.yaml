@@ -9,12 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - id: deploy
-      uses: bitovi/github-actions-deploy-docker-to-ec2@v0.2.0
+      uses: bitovi/github-actions-deploy-docker-to-ec2@v0.4.5
       with:
         aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID_JIRA_INTEGRATIONS}}
         aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY_JIRA_INTEGRATIONS}}
         dot_env: ${{ secrets.DOT_ENV }}
         aws_default_region: us-east-1
         domain_name: bitovi-jira.com
+        root_domain: true
 
         app_port: 3000
