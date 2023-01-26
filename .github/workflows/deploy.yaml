@@ -7,6 +7,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: ${{ github.ref_name }}
+      url: ${{ steps.deploy.outputs.vm_url }}
     steps:
     - id: deploy
       uses: bitovi/github-actions-deploy-docker-to-ec2@v0.4.5
