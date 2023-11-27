@@ -15,7 +15,7 @@ jobs:
       url: ${{ steps.deploy.outputs.vm_url }}
     steps:
     - id: deploy
-      uses: bitovi/github-actions-deploy-docker-to-ec2@v0.4.5
+      uses: bitovi/github-actions-deploy-docker-to-ec2@v0.4.6
       with:
         aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID_JIRA_INTEGRATIONS}}
         aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY_JIRA_INTEGRATIONS}}
@@ -25,3 +25,6 @@ jobs:
         root_domain: true
 
         app_port: 3000
+
+        tf_state_bucket_destroy: true
+        stack_destroy: true
