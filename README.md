@@ -15,23 +15,26 @@ cd jira-integrations
 
 ### Getting Environment Variables
 
-The next step is to fill in your environment variables. You can use the .env.example to create your .env in your root folder
+The next step is to fill in your environment variables. You can use the `.env.example` to create your `.env` in your root folder:
 
 ```sh
 cp .env.example .env
 ```
 
-Your environment variables can be gotten from Jira following the steps below
+Your environment variables can be procured from Jira following the steps below
 
-- Open Jira developer console. https://developer.atlassian.com
-- Navigate to the developer console, it can be found on the top right corner of the screen.
-- Create your app and choose OAuth2.0, put in the app name and accept the terms.
-- Click Permissions, add the Jira API scope then configure it. Ensure to include the scopes you want and save.
-- Click Authorization, input the callback url, as default for this application locally, use `http://localhost:3000` (be sure to match the PORT in the server if you changed it) and save.
-- Find Settings and scroll down to copy your CLIENT_ID and CLIENT_SECRET.
-- The CLIENT_JIRA_API_URL is `https://api.atlassian.com`.
+- Open Jira developer console. https://developer.atlassian.com/console/myapps/
+- Create your app and choose `OAuth2.0`, put in the app name and accept the terms.
+- Click **Permissions**, add the Jira API scope then configure it. Ensure to include the scopes you want and save.
+  - Scope is usually `read:jira-work`
+- Click **Authorization** and input the `callback_url`. 
+  - When developing locally, use http://localhost:3000/oauth-callback; be sure to match the `PORT` in the server if you changed it.
+  - When deploying to cloud/other, use the URL of the server + `/oauth-callback`. 
+    - Our GitHub Action will deploy to `https://bitovi-<app_name>-<branch_name>.bitovi-jira.com`; double check the URL in the Action summary.
+- Find **Settings** and scroll down to copy your `CLIENT_ID` and `CLIENT_SECRET`.
+- The `CLIENT_JIRA_API_URL` is `https://api.atlassian.com/ex/jira`.
 
-Note: All environment variables that start with `CLIENT` will be sent to the client side and exposed.
+> Note: All environment variables that start with `CLIENT` will be sent to the client side and exposed.
 
 ### Navigating the Files
 
